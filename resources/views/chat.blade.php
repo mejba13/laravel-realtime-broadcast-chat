@@ -130,19 +130,7 @@
             });
     });
 
-    // Echo listener
-    if (window.Echo) {
-        window.Echo.channel('chat-channel')
-            .listen('.message.sent', (e) => {
-                appendMessage({ message: e.message, sender: e.sender });
-                // Toast only for messages from others
-                if (e.sender !== currentUser) {
-                    showToast("New message received via Pusher!");
-                }
-            });
-    } else {
-        console.warn('Echo not loaded. Check Vite and JS setup.');
-    }
+
 </script>
 
 </body>
